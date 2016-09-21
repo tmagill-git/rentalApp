@@ -30,10 +30,9 @@ def apply():
   if request.method == 'POST':
     if form.validate() == False:
         print form.validate()
-        flash('All fields are required.')
         return render_template('apply.html', form=form)
     else:
-        msg = Message("Test", sender='contact@example.com', recipients=['your_email@example.com'])
+        msg = Message("Test", sender='rentApp@tmagill.net', recipients=['estrella@tmagill.net'])
         msg.body = """
         From: %s <%s>
         %s
