@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+
+  {% for message in form.name.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+ 
+  {% for message in form.email.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+ 
+  {% for message in form.num_apps.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+ 
+  {% for message in form.ssn.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+
+  <form action="{{ url_for('apply') }}" method=post>
+    {{ form.hidden_tag() }}
+ 
+    {{ form.name.label }}
+    {{ form.name }}
+ 
+    {{ form.email.label }}
+    {{ form.email }}
+ 
+    {{ form.num_apps.label }}
+    {{ form.num_apps }}
+ 
+    {{ form.ssn.label }}
+    {{ form.ssn }}
+    <BR>
+    {{ form.submit }}
+  </form>
+{% endblock %}
