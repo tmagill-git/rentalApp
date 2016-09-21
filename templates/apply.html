@@ -258,7 +258,14 @@
       {% endfor %}
     </td><tr><td>
     </td></tr></table>
+Applicant understands and agrees that: (i) this is an application to rent only and does not guarantee that applicant will be offered the Premises; (ii) Landlord or Manager or Agent may accept more than one application for the Premises and, using their sole discretion, will select the best qualified applicant, and (iii) Applicant will provide a copy of applicant's driver's license upon request.
+Applicant represents the above information to be true and complete, and hereby authorizes Landlord or Manager or Agent to: (I) verify the information provided; and (ii) obtain a credit report on applicant and other reports, warnings and verifications on and about applicant, which may include, but not be limited to, criminal background checks, reports on unlawful detainers, bad checks, fraud warnings, employment and tenant history. Applicant further authorizes Landlord or Manager or Agent to disclose information to prior or subsequent owners and/or agents.
 
+    {{ form.sig.label }}
+    {{ form.sig }}
+      {% for message in form.sig.errors %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %}
     <br><br>
     {{ form.submit }}
   </form>

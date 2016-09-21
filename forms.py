@@ -6,7 +6,6 @@ class ContactForm(Form):
     email = StringField("Email",  [validators.InputRequired("Please enter your email address.")])
     num_apps = StringField("Number of applicants",  [validators.InputRequired("Please enter the number of applicants.")])
     other_occ = TextAreaField("Please list any additional occupants that will be living in the unit.  Any occumpants over the age of 18 must submit an additional application as well.")
-    ssn = StringField("Social Security Number",  [validators.InputRequired("Please enter your SSN.")])
     move_date = StringField("Move in Date",  [validators.InputRequired("Please enter the move-in date.")])
     lease_term = StringField("Lease Term (1 or 2 Years)",  [validators.InputRequired("Please enter the lease term.")])
     dl_info = StringField("Driver's license State and Number",  [validators.InputRequired("Please enter Driver's License info.")])
@@ -48,4 +47,6 @@ class ContactForm(Form):
     ref2addr = StringField("Personal Reference 2",  [validators.InputRequired("Please enter personal reference.")])
     ref2length = StringField("Length of aquaintance",  [validators.InputRequired("Please complete personal reference information.")])
     ref2phone = StringField("Personal Reference 2 Phone",  [validators.InputRequired("Please complete personal reference information.")])
+    sig = StringField("Please enter name.  This will act as application signature",
+                            [validators.InputRequired("Please provide signature.")])
     submit = SubmitField("Send")

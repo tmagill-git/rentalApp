@@ -28,7 +28,7 @@ def createBody(form):
     text += "Name: " + str(form.name.data) + "\n"
     text += "Email: " + str(form.email.data) + "\n"
     text += "Number of applicants: " + str(form.num_apps.data) + "\n"
-    text += "Social Security Number: " + str(form.ssn.data) + "\n"
+    text += "Other Occupants: " + str(form.other_occ.data) + "\n"
     text += "Move in Date: " + str(form.move_date.data) + "\n"
     text += "Lease Term: " + str(form.lease_term.data) + "\n"
     text += "DL Info: " + str(form.dl_info.data) + "\n"
@@ -87,7 +87,7 @@ def apply():
         mail.send(msg)
         print msg.body
 
-        return 'Your Application has been submitted.'
+        return render_template('screening.html')
 
   elif request.method == 'GET':
     return render_template('apply.html', form=form)
