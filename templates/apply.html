@@ -4,253 +4,25 @@
 
   <form action="{{ url_for('apply') }}" method=post>
     {{ form.hidden_tag() }}
-<table width="1000"><tr><td>
+<!--<table width="1000"><tr><td>-->
     {{ form.name.label }}
     {{ form.name }}
       {% for message in form.name.errors %}
       <div class="flash">{{ message }}</div>
       {% endfor %}
-    </td><td>
-    {{ form.email.label }}
+
+        {{ form.email.label }}
     {{ form.email }}
       {% for message in form.email.errors %}
       <div class="flash">{{ message }}</div>
       {% endfor %}
-    </td><tr><td>
-    {{ form.num_apps.label }}
-    {{ form.num_apps }}
-      {% for message in form.num_apps.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.ssn.label }}
-    {{ form.ssn }}
-      {% for message in form.ssn.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.move_date.label }}
-    {{ form.move_date }}
-      {% for message in form.move_date.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.lease_term.label }}
-    {{ form.lease_term }}
-      {% for message in form.lease_term.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.dl_info.label }}
-    {{ form.dl_info }}
-      {% for message in form.dl_info.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.phone.label }}
-    {{ form.phone }}
-      {% for message in form.phone.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.pets.label }}
+
+        {{ form.pets.label }}
     {{ form.pets }}
       {% for message in form.pets.errors %}
       <div class="flash">{{ message }}</div>
       {% endfor %}
-    </td><tr><td>
-    {{ form.bankruptcy.label }}
-    {{ form.bankruptcy }}
-      {% for message in form.bankruptcy.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.felony.label }}
-    {{ form.felony }}
-      {% for message in form.felony.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.eviction.label }}
-    {{ form.eviction }}
-      {% for message in form.eviction.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.res1addr.label }}
-    {{ form.res1addr }}
-      {% for message in form.res1addr.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.res1from.label }}
-    {{ form.res1from }}
-      {% for message in form.res1from.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.res1to.label }}
-    {{ form.res1to }}
-      {% for message in form.res1to.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.res1manager.label }}
-    {{ form.res1manager }}
-      {% for message in form.res1manager.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.res1phone.label }}
-    {{ form.res1phone }}
-      {% for message in form.res1phone.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.res1addr.label }}
-    {{ form.res1addr }}
-      {% for message in form.res1addr.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.res2from.label }}
-    {{ form.res2from }}
-      {% for message in form.res2from.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.res2to.label }}
-    {{ form.res2to }}
-      {% for message in form.res2to.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.res2manager.label }}
-    {{ form.res2manager }}
-      {% for message in form.res2manager.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.res2phone.label }}
-    {{ form.res2phone }}
-      {% for message in form.res2phone.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp1addr.label }}
-    {{ form.emp1addr }}
-      {% for message in form.emp1addr.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp1from.label }}
-    {{ form.emp1from }}
-      {% for message in form.emp1from.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.emp1to.label }}
-    {{ form.emp1to }}
-      {% for message in form.emp1to.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp1manager.label }}
-    {{ form.emp1manager }}
-      {% for message in form.emp1manager.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.emp1phone.label }}
-    {{ form.emp1phone }}
-      {% for message in form.emp1phone.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp1income.label }}
-    {{ form.emp1income }}
-      {% for message in form.emp1income.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp2addr.label }}
-    {{ form.emp2addr }}
-      {% for message in form.emp2addr.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp2from.label }}
-    {{ form.emp2from }}
-      {% for message in form.emp2from.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.emp2to.label }}
-    {{ form.emp2to }}
-      {% for message in form.emp2to.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp2manager.label }}
-    {{ form.emp2manager }}
-      {% for message in form.emp2manager.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.emp2phone.label }}
-    {{ form.emp2phone }}
-      {% for message in form.emp2phone.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.emp2income.label }}
-    {{ form.emp2income }}
-      {% for message in form.emp2income.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.credit.label }}
-    {{ form.credit }}
-      {% for message in form.credit.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.accounts.label }}
-    {{ form.accounts }}
-      {% for message in form.accounts.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.ref1addr.label }}
-    {{ form.ref1addr }}
-      {% for message in form.ref1addr.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.ref1length.label }}
-    {{ form.ref1length }}
-      {% for message in form.ref1length.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><tr><td>
-    {{ form.ref1phone.label }}
-    {{ form.ref1phone }}
-      {% for message in form.ref1phone.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.ref2addr.label }}
-    {{ form.ref2addr }}
-      {% for message in form.ref2addr.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-    </td><td>
-    {{ form.ref2length.label }}
-    {{ form.ref2length }}
-      {% for message in form.ref2length.errors %}
-      <div class="flash">{{ message }}</div>
-      {% endfor %}
-</td></tr></table>
+
     <br><br>
     {{ form.submit }}
   </form>
