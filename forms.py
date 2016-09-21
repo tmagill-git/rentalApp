@@ -22,7 +22,7 @@ class ContactForm(Form):
     res1manager = TextField("Landlord Name",  [validators.Required("Please complete current address information.")])
     res1phone = TextField("Landlord Phone",  [validators.Required("Please complete current address information.")])
 	
-    res1addr = TextField("Previous Address",  [validators.Required("Please enter previous address.")])
+    res2addr = TextField("Previous Address",  [validators.Required("Please enter previous address.")])
     res2from = TextField("From Date",  [validators.Required("Please complete previous address information.")])
     res2to = TextField("To Date",  [validators.Required("Please complete previous address information.")])
     res2manager = TextField("Landlord Name",  [validators.Required("Please complete previous address information.")])
@@ -33,14 +33,14 @@ class ContactForm(Form):
     emp1to = TextField("To Date",  [validators.Required("Please complete current employer information.")])
     emp1manager = TextField("Supervisor Name",  [validators.Required("Please complete current employer information.")])
     emp1phone = TextField("Supervisor Phone",  [validators.Required("Please complete current employer information.")])
-    emp1income = TextField("Gross Income",  [validators.Required("Please complete current employer information.")])
+    emp1income = TextField("Gross Income per Month",  [validators.Required("Please complete current employer information.")])
 
-    emp2addr = TextField("previous Employer",  [validators.Required("Please enter previous employer.")])
+    emp2addr = TextField("Previous Employer",  [validators.Required("Please enter previous employer.")])
     emp2from = TextField("From Date",  [validators.Required("Please complete previous employer information.")])
     emp2to = TextField("To Date",  [validators.Required("Please complete previous employer information.")])
     emp2manager = TextField("Supervisor Name",  [validators.Required("Please complete previous employer information.")])
     emp2phone = TextField("Supervisor Phone",  [validators.Required("Please complete previous employer information.")])
-    emp2income = TextField("Gross Income",  [validators.Required("Please complete previous employer information.")])
+    emp2income = TextField("Gross Income per Month",  [validators.Required("Please complete previous employer information.")])
 
     credit = TextAreaField("Please list creditors, monthly payments, and account balances.  If you know your credit score, you can enter it here as well.",  [validators.Required("Please enter credit info.")])
     accounts = TextAreaField("Please list account types (checking/savings/etc) balances.")

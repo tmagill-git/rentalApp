@@ -17,9 +17,9 @@ form input {
   font-size: 1.1em;
 }
  
-form textarea#message {
-  width: 500px;
-  height: 100px;
+form textarea {
+  width: 400px;
+  height: 200px;
   background-color: #fafafa;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
