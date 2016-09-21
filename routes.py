@@ -1,6 +1,13 @@
 from flask import Flask, render_template, request, flash
 from forms import ContactForm
 from flask_mail import Message, Mail
+from mail_creds import *
+
+app.config["MAIL_SERVER"] = config["MAIL_SERVER"]
+app.config["MAIL_PORT"] = config["MAIL_PORT"]
+app.config["MAIL_USE_SSL"] = config["MAIL_USE_SSL"]
+app.config["MAIL_USERNAME"] = config["MAIL_USERNAME"]
+app.config["MAIL_PASSWORD"] = config["MAIL_PASSWORD"]
 
 mail = Mail()
 
@@ -8,11 +15,7 @@ app = Flask(__name__)
 
 app.secret_key = 'abcde12345'
 
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 465
-app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = 'mrthomasmagill@gmail.com'
-app.config["MAIL_PASSWORD"] = 'please38G'
+
 
 mail.init_app(app)
 
