@@ -5,6 +5,7 @@ class ContactForm(Form):
     name = StringField("Name",  [validators.InputRequired("Please enter your name.")])
     email = StringField("Email",  [validators.InputRequired("Please enter your email address.")])
     num_apps = StringField("Number of applicants",  [validators.InputRequired("Please enter the number of applicants.")])
+    other_occ = TextAreaField("Please list any additional occupants that will be living in the unit.  Any occumpants over the age of 18 must submit an additional application as well.")
     ssn = StringField("Social Security Number",  [validators.InputRequired("Please enter your SSN.")])
     move_date = StringField("Move in Date",  [validators.InputRequired("Please enter the move-in date.")])
     lease_term = StringField("Lease Term (1 or 2 Years)",  [validators.InputRequired("Please enter the lease term.")])

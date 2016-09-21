@@ -22,15 +22,15 @@
       {% for message in form.email.errors %}
       <div class="flash">{{ message }}</div>
       {% endfor %}
-    </td><tr><td>
+    </td><td>
     {{ form.num_apps.label }}
     {{ form.num_apps }}
       {% for message in form.num_apps.errors %}
       <div class="flash">{{ message }}</div>
       {% endfor %}
-    </td><td>
-    {{ form.ssn.label }}
-    {{ form.ssn }}
+    </td><tr><td>
+    {{ form.other_occ.label }}
+    {{ form.other_occ}}
       {% for message in form.ssn.errors %}
       <div class="flash">{{ message }}</div>
       {% endfor %}
