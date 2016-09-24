@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, send_file
 from forms import ContactForm
 from flask_mail import Message, Mail
 import mail_creds
@@ -91,6 +91,21 @@ def apply():
 
   elif request.method == 'GET':
     return render_template('apply.html', form=form)
+
+@app.route('/file-downloads/')
+def file_downloads():
+    try:
+        return render_template('downloads.html')
+        # return "test"
+    except Exception as e:
+        return str(e)
+
+@app.route('/download-hoa/')
+def return_files():
+	try:
+		return send_file('static/test.txt', mimetype='image/jpeg')
+	except Exception as e:
+		return str(e)
 
 if __name__ == '__main__':
   app.run(debug=True, host='0.0.0.0', port=80)
