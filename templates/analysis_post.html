@@ -1,0 +1,54 @@
+        <head>
+        <meta charset="utf-8">
+        <center>
+            <title style="color:#D8D8D8">
+            Rental Comparison</title>
+        </center>
+            <style>
+                body {background-color:#000000; color:white; font-size:200%}
+                br {style-color:#D8D8D8"}
+
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+                </head>
+        <body>
+
+            <center>
+Income Analysis<br><br>
+<h1>{{ house.roc }}</h1><br>
+<table border="1" cellpadding="5">
+    <tr><td>Price</td><td>{{ house.price }}</td></tr>
+    <tr><td>Down Payment</td><td>{{ house.dp }}</td></tr>
+    <tr><td>Monthly</td><td>{{ house.monthly }}</td></tr>
+    <tr><td>HOA</td><td>{{ house.hoa }}</td></tr>
+    <tr><td>Tax</td><td>{{ house.tax }}</td></tr>
+    <tr><td>Rent</td><td>{{ house.rent }}</td></tr>
+    <tr><td>Principal</td><td>{{ house.principal }}</td></tr>
+    <tr><td>Cash</td><td>{{ house.cash }}</td></tr>
+    <tr><td>Income</td><td>{{ house.income }}</td></tr>
+    <tr><td>ROC</td><td>{{ house.roc }}</td></tr>
+    <tr><td>XROC</td><td>{{ house.xroc }}</td></tr>    
+</table>
+                </center>
+</body>
