@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_file
 from forms import ContactForm
 from flask_mail import Message, Mail
 import mail_creds
-
+import math
 
 
 mail = Mail()
@@ -18,6 +18,28 @@ app.config["MAIL_USERNAME"] = mail_creds.MAIL_USERNAME
 app.config["MAIL_PASSWORD"] = mail_creds.MAIL_PASSWORD
 
 mail.init_app(app)
+
+class rentObject():
+    def __init__(self, price, hoa, rent, dp, rate):
+        if float(price) <= 1000:
+            self.price = float(price) * 1000
+        else:
+            self.price = float(price)
+        self.hoa = float(hoa)
+        self.rent = float(rent)
+        self.dp = self.price * int(dp) / 100
+        self.rate = float(rate) / (100 * 12)
+        self.finance = self.price - self.dp
+        self.monthly = self.finance * (self.rate / (1 - math.pow((1 + self.rate), (- 360))))
+        # self.principal = round(self.finance / 741, 2)
+        self.principal = round(self.monthly * .249, 2)
+        self.tax = self.price * .01179 / 12
+        self.insurance = 30
+        self.cash = self.rent - self.monthly - self.hoa - self.tax - self.insurance
+        self.income = self.principal + self.cash
+        self.roc = "{0:.0f}%".format(self.income * 1200 / self.dp)
+        self.appreciation = self.price * .02 / 12
+        self.xroc = "{0:.0f}%".format(((self.income + self.appreciation) * 1200 / self.dp) -4)
 
 def createBody(form):
     text = """
@@ -92,5 +114,26 @@ def apply():
   elif request.method == 'GET':
     return render_template('apply.html', form=form)
 
+
+@app.route('/analysis')
+def analysis():
+    html = render_template('analysis.html')
+    return html
+    return
+
+@app.route('/analysis_post', methods=['POST'])
+def analysis_post():
+    price = request.form['price']
+    hoa = request.form['hoa']
+    rent = request.form['rent']
+    dp = request.form['dp']
+    rate = request.form['rate']
+    house = rentObject(price, hoa, rent, dp, rate)
+    print house.roc, house.xroc, house.appreciation
+    html = render_template('analysis_post.html', house=house)
+    return html
+
+
+
 if __name__ == '__main__':
-  app.run(debug=True, host='0.0.0.0')
+  app.run()
