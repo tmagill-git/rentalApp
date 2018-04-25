@@ -47,6 +47,7 @@ def createBody(form):
     """ % (form.name.data, form.email.data)
     text += ""
     text += "APPLICATION"
+    text += "Address: " + str(form.address.data) + "\n"
     text += "Name: " + str(form.name.data) + "\n"
     text += "Email: " + str(form.email.data) + "\n"
     text += "Number of applicants: " + str(form.num_apps.data) + "\n"
@@ -104,7 +105,7 @@ def apply():
         print form.validate()
         return render_template('apply.html', form=form)
     else:
-        msg = Message("Application from " + form.name.data, sender='rentApp@tmagill.net', recipients=['mrthomasmagill@gmail.com'])
+        msg = Message("Application from " + form.name.data, sender='rentApp@tmagill.net', recipients=['highland@tmagill.net'])
         msg.body = createBody(form)
         mail.send(msg)
         print msg.body

@@ -1,7 +1,9 @@
 from flask_wtf import Form
-from wtforms import StringField, SubmitField, validators, TextAreaField, ValidationError
+from wtforms import StringField, SubmitField, validators, TextAreaField, ValidationError, SelectField
 
+addresses = [('3528', '3528 Highland Ave, San Diego, CA, 92105'), ('3530', '3530 Highland Ave, San Diego, CA, 92105')]
 class ContactForm(Form):
+    address = SelectField("Address", [validators.InputRequired("Please enter Property Address.")], choices=addresses)
     name = StringField("Name",  [validators.InputRequired("Please enter your name.")])
     email = StringField("Email",  [validators.InputRequired("Please enter your email address.")])
     num_apps = StringField("Number of applicants",  [validators.InputRequired("Please enter the number of applicants.")])
